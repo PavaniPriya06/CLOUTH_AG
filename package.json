@@ -1,0 +1,15 @@
+{
+  "name": "tcs-fullstack",
+  "version": "1.0.0",
+  "description": "TCS - The Co-ord Set Studio (Full Stack)",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "build:frontend": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "build": "npm run build:frontend",
+    "postinstall": "npm run install:all"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    @apply bg-cream-100 text-charcoal font-sans;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-cream-200; }
+  ::-webkit-scrollbar-thumb { @apply bg-gold rounded-full; }
+}
+
+@layer components {
+  /* ── Oval image container ── */
+  .oval-container {
+    @apply relative overflow-hidden;
+    border-radius: 60% 60% 50% 50% / 55% 55% 45% 45%;
+    aspect-ratio: 3/4;
+  }
+
+  .oval-container-tall {
+    @apply relative overflow-hidden;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    aspect-ratio: 2/3;
+  }
+
+  /* ── Pill/arch container ── */
+  .arch-container {
+    @apply relative overflow-hidden;
+    border-radius: 50% 50% 0 0 / 30% 30% 0 0;
+    aspect-ratio: 3/4;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply bg-charcoal text-cream-100 px-6 py-3 rounded-full font-sans font-medium
+           transition-all duration-300 ease-out hover:bg-charcoal-light hover:shadow-medium
+           hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gold;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-charcoal text-charcoal px-6 py-3 rounded-full font-sans font-medium
+           transition-all duration-300 ease-out hover:bg-charcoal hover:text-cream-100
+           hover:shadow-medium hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-gold;
+  }
+
+  .btn-gold {
+    @apply bg-gold text-charcoal px-6 py-3 rounded-full font-sans font-medium
+           transition-all duration-300 ease-out hover:bg-gold-dark hover:text-cream-100
+           hover:shadow-gold hover:-translate-y-0.5 active:translate-y-0
+           focus:outline-none focus:ring-2 focus:ring-charcoal;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-white rounded-3xl shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+
+  .card-cream {
+    @apply bg-cream-200 rounded-3xl shadow-soft hover:shadow-medium transition-all duration-300;
+  }
+
+  /* ── Input fields ── */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-2xl border border-cream-400 bg-cream-50
+           font-sans text-charcoal placeholder-charcoal-muted
+           focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20
+           transition-all duration-200;
+  }
+
+  /* ── Badge ── */
+  .badge-grade {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium font-sans;
+  }
+  .badge-premium { @apply badge-grade bg-gold/20 text-gold-dark; }
+  .badge-standard { @apply badge-grade bg-sage/20 text-sage; }
+  .badge-economy { @apply badge-grade bg-cream-400/50 text-charcoal-muted; }
+
+  /* ── Status badges ── */
+  .status-pending { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-700; }
+  .status-confirmed { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700; }
+  .status-processing { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700; }
+  .status-shipped { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-100 text-indigo-700; }
+  .status-delivered { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700; }
+  .status-cancelled { @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700; }
+
+  /* ── Section headers ── */
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl text-charcoal leading-tight;
+  }
+  .section-subtitle {
+    @apply font-sans text-charcoal-muted text-lg;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .glass {
+    background: rgba(255, 248, 240, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-dark {
+    background: rgba(44, 24, 16, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
